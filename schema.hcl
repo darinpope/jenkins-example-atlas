@@ -13,7 +13,7 @@ table "users" {
   }
 }
 table "blog_posts" {
-  schema = schema.example
+  schema = schema.db1
   column "id" {
     null = false
     type = int
