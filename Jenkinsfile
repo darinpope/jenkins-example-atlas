@@ -11,12 +11,12 @@ pipeline {
     }
     stage('apply schema.hcl') {
       steps {
-        sh 'atlas schema apply -u "mariadb://$MARIADB_CREDS_USR:$MARIADB_CREDS_PSW@mariadb:3306/db1" --to file://schema.hcl --auto-approve'
+        sh 'atlas schema apply --url "mariadb://$MARIADB_CREDS_USR:$MARIADB_CREDS_PSW@mariadb:3306/db1" --to file://schema.hcl --auto-approve'
       }
     }
     stage('inspect the database') {
       steps {
-        sh 'atlas schema inspect -u "mariadb://$MARIADB_CREDS_USR:$MARIADB_CREDS_PSW@mariadb:3306/db1"'
+        sh 'atlas schema inspect --url "mariadb://$MARIADB_CREDS_USR:$MARIADB_CREDS_PSW@mariadb:3306/db1"'
       }
     }
   }
