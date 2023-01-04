@@ -8,6 +8,10 @@ table "users" {
     null = true
     type = varchar(100)
   }
+  column "city" {
+    null = true
+    type = varchar(100)
+  }
   primary_key {
     columns = [column.id]
   }
